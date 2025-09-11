@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* تعريف نظام التصميم للحملة الانتخابية - كل الألوان والتدرجات والخطوط يجب تعريفها هنا
+كل الألوان يجب أن تكون HSL */
+
+@layer base {
+  :root {
+    --foreground: 15 23 42;
+
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
+
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
+
+    /* ألوان الحملة الانتخابية - أزرق هادئ كلون أساسي */
+    --primary: 217 91 60;
+    --primary-foreground: 248 250 252;
+    --primary-dark: 215 84 56;
+    --primary-light: 219 95 64;
+
+    /* أخضر مهدئ كلون ثانوي */
+    --secondary: 142 51 36;
+    --secondary-foreground: 248 250 252;
+
+    /* ذهبي للتأكيدات المهمة */
+    --accent: 45 93 58;
+    --accent-foreground: 15 23 42;
+
+    --muted: 248 250 252;
+
+
+    --destructive: 0 84 60;
+    --destructive-foreground: 248 250 252;
+
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 217 91 60;
+
+    --radius: 0.75rem;
+
+    /* تدرجات للخلفيات الجذابة */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(142 51 42));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(var(--accent)), hsl(45 100 65));
+
+    /* ظلال احترافية */
+    --shadow-soft: 0 4px 6px -1px hsl(var(--primary) / 0.1);
+    --shadow-medium: 0 10px 15px -3px hsl(var(--primary) / 0.1);
+    --shadow-large: 0 20px 25px -5px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 20px hsl(var(--accent) / 0.3);
+
+    /* انتقالات سلسة */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* شريط جانبي */
+    --sidebar-background: 248 250 252;
+    --sidebar-foreground: 15 23 42;
+    --sidebar-primary: 217 91 60;
+    --sidebar-primary-foreground: 248 250 252;
+    --sidebar-accent: 226 232 240;
+    --sidebar-accent-foreground: 15 23 42;
+    --sidebar-border: 226 232 240;
+    --sidebar-ring: 217 91 60;
+  }
+
+  .dark {
+    --background: 15 23 42;
+    --foreground: 248 250 252;
+
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
+
+    --popover: 30 41 59;
+    --popover-foreground: 248 250 252;
+
+    --primary: 217 91 65;
+    --primary-foreground: 15 23 42;
+    --primary-dark: 215 84 60;
+    --primary-light: 219 95 70;
+
+    --secondary: 142 51 45;
+    --secondary-foreground: 248 250 252;
+
+    --accent: 45 93 65;
+    --accent-foreground: 15 23 42;
+
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184;
+
+    --destructive: 0 84 65;
+    --destructive-foreground: 248 250 252;
+
+    --border: 51 65 85;
+    --input: 51 65 85;
+    --ring: 217 91 65;
+
+    --sidebar-background: 30 41 59;
+    --sidebar-foreground: 248 250 252;
+    --sidebar-primary: 217 91 65;
+    --sidebar-primary-foreground: 15 23 42;
+    --sidebar-accent: 51 65 85;
+    --sidebar-accent-foreground: 248 250 252;
+    --sidebar-border: 51 65 85;
+    --sidebar-ring: 217 91 65;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-tajawal;
+    direction: rtl;
+  }
+
+  html {
+    direction: rtl;
+  }
+}

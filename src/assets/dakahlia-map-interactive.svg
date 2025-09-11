@@ -1,0 +1,9 @@
+<svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- مركز 1 -->
+  <path id="center-1" d="M60 60 L140 55 L120 130 L60 130 Z" fill="#38bdf8" fill-opacity="0.7" stroke="#0ea5e9" stroke-width="2"/>
+  <!-- مركز 2 -->
+  <path id="center-2" d="M140 55 L240 55 L220 130 L120 130 Z" fill="#34d399" fill-opacity="0.7" stroke="#0ea5e9" stroke-width="2"/>
+  <!-- مركز 3 -->
+  <path id="center-3" d="M240 55 L270 100 L220 170 L220 130 Z" fill="#fbbf24" fill-opacity="0.7" stroke="#0ea5e9" stroke-width="2"/>
+  <text x="120" y="120" font-size="18" fill="#0ea5e9" opacity="0.3">الدقهلية</text>
+</svg>
