@@ -280,7 +280,7 @@ const InteractiveMap: React.FC = () => {
       const village = data as Village;
       return (
         <Card className="w-full max-w-xs sm:max-w-md mx-auto shadow-lg" style={{ border: 'none' }}>
-          <CardHeader className="text-center p-4 rounded-t-lg" style={{ background: 'linear-gradient(to right, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05))' }}>
+          <CardHeader className="text-center p-4 rounded-t-lg" style={{ background: 'linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05))' }}>
             <CardTitle className="text-lg">{village.name}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 p-4">
@@ -485,7 +485,7 @@ const InteractiveMap: React.FC = () => {
               placeholder="ابحث عن مركز أو وحدة أو قرية..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pr-10 text-right"
+              className="pr-10 text-right border-2 border-gray-300 focus:border-blue-400 focus:ring-0 bg-white shadow-sm rounded-lg"
             />
           </div>
         </div>
@@ -505,7 +505,7 @@ const InteractiveMap: React.FC = () => {
             <Card className="p-4 sm:p-6 min-h-[500px] shadow-lg" style={{ border: '1px solid #e5e7eb' }}>
               <div className="relative w-full h-full">
                 {/* خلفية الخريطة المحسنة */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-green-50 to-amber-50 rounded-lg" style={{ border: '1px solid #dbeafe' }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-green-50 to-blue-100 rounded-lg" style={{ border: '1px solid #dbeafe' }}>
                   {/* شبكة الخلفية */}
                   <div className="absolute inset-0 opacity-20">
                     <svg width="100%" height="100%" className="w-full h-full">
@@ -600,7 +600,7 @@ const InteractiveMap: React.FC = () => {
                         </div>
                         {/* مؤشر النشاط المحسن */}
                         <motion.div
-                          className="absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r from-accent to-yellow-400 rounded-full shadow-lg"
+                          className="absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r from-blue-500 to-green-500 rounded-full shadow-lg"
                           style={{ border: '2px solid white' }}
                           animate={{
                             scale: [1, 1.3, 1],
