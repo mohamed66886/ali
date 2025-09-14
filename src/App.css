@@ -1,42 +1,107 @@
+/* ملف App.css - إعدادات خاصة بالتطبيق */
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #ffffff !important;
+  color: #1e293b;
+}
+
+/* إعدادات الكروت الإضافية */
+.card-enhanced {
+  background: #ffffff !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-enhanced:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.stats-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1px solid #e2e8f0;
+}
+
+.gradient-card {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+  color: #ffffff;
+  border: none;
+}
+
+/* ستايلات للتأكد من ظهور المحتوى */
+.dashboard-content {
+  background: #ffffff !important;
+  min-height: 100vh;
+}
+
+/* إزالة أي خلفيات صفراء غريبة */
+* {
+  border-color: #e2e8f0 !important;
+}
+
+.text-yellow-500, .bg-yellow-500, [class*="yellow"] {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+}
+
+/* تحسينات إضافية للأزرار والـ inputs */
+.btn, button:not([class*="unstyled"]) {
+  border-radius: 0.5rem;
+  font-family: 'Tajawal', system-ui, sans-serif;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.input, input:not([type="checkbox"]):not([type="radio"]):not([type="file"]) {
+  border-radius: 0.5rem;
+  font-family: 'Tajawal', system-ui, sans-serif;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease-in-out;
+}
+
+/* إصلاح الـ focus states */
+.btn:focus, button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.input:focus, input:focus, textarea:focus, select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* تحسين الـ hover states */
+.btn:hover, button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* إعدادات خاصة للنماذج */
+.form-container {
+  background: #ffffff;
   padding: 2rem;
-  text-align: center;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.form-section {
+  margin-bottom: 1.5rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.form-section:last-child {
+  margin-bottom: 0;
 }

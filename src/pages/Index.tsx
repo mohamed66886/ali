@@ -4,11 +4,17 @@ import LoadingScreen from '../components/LoadingScreen';
 import InteractiveMap from '../components/InteractiveMap';
 import Dashboard from '../components/Dashboard';
 import { Button } from '@/components/ui/button';
-import { FaMap, FaTachometerAlt, FaUser } from 'react-icons/fa';
+import { FaMap, FaTachometerAlt, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { useAuth } from '@/hooks/useAuth';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentView, setCurrentView] = useState<'map' | 'dashboard'>('map');
+  const { logout } = useAuth();
+
+  const handleLogout = async () => {
+    await logout();
+  };
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
@@ -59,6 +65,16 @@ const Index = () => {
             >
               <FaTachometerAlt />
               <span className="hidden xs:inline">لوحة التحكم</span>
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={handleLogout}
+              className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm text-red-600 hover:text-red-700 hover:bg-red-50"
+              title="تسجيل الخروج"
+            >
+              <FaSignOutAlt />
+              <span className="hidden xs:inline">خروج</span>
             </Button>
           </nav>
         </div>

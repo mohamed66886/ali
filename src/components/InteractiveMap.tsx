@@ -502,10 +502,10 @@ const InteractiveMap: React.FC = () => {
                 اضغط على أي مركز لعرض التفاصيل والإحصائيات الخاصة به
               </p>
             </div>
-            <Card className="p-4 sm:p-6 min-h-[500px] shadow-lg" style={{ border: '1px solid #e5e7eb' }}>
+            <Card className="p-4 sm:p-6 min-h-[500px] shadow-lg" style={{ border: '1px solid #e5e7eb' , background: 'linear-gradient(135deg, #d1fae5 0%, #bbf7d0 100%)' }}>
               <div className="relative w-full h-full">
                 {/* خلفية الخريطة المحسنة */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-green-50 to-blue-100 rounded-lg" style={{ border: '1px solid #dbeafe' }}>
+                <div className="absolute inset-0 bg-green-700 from-green-50 via-green-900 to-green-200 rounded-lg" style={{ border: '1px solid #dbeafe' }}>
                   {/* شبكة الخلفية */}
                   <div className="absolute inset-0 opacity-20">
                     <svg width="100%" height="100%" className="w-full h-full">

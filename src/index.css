@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,6 +9,7 @@
 
 @layer base {
   :root {
+    --background: 255 255 255;
     --foreground: 15 23 42;
 
     --card: 255 255 255;
@@ -16,21 +19,21 @@
     --popover-foreground: 15 23 42;
 
     /* ألوان الحملة الانتخابية - أزرق هادئ كلون أساسي */
-    --primary: 217 91 60;
-    --primary-foreground: 248 250 252;
-    --primary-dark: 215 84 56;
-    --primary-light: 219 95 64;
+    --primary: 210 100 45;
+    --primary-foreground: 255 255 255;
+    --primary-dark: 210 100 35;
+    --primary-light: 210 100 55;
 
-    /* أخضر مهدئ كلون ثانوي */
-    --secondary: 142 51 36;
-    --secondary-foreground: 248 250 252;
+    /* رمادي أنيق كلون ثانوي */
+    --secondary: 215 25 15;
+    --secondary-foreground: 255 255 255;
 
-    /* ذهبي للتأكيدات المهمة */
-    --accent: 45 93 58;
-    --accent-foreground: 15 23 42;
+    /* أخضر هادئ للتأكيدات */
+    --accent: 142 69 45;
+    --accent-foreground: 255 255 255;
 
     --muted: 248 250 252;
-
+    --muted-foreground: 100 116 139;
 
     --destructive: 0 84 60;
     --destructive-foreground: 248 250 252;
@@ -43,15 +46,15 @@
 
     /* تدرجات للخلفيات الجذابة */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(142 51 42));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(215 25 25));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
-    --gradient-accent: linear-gradient(90deg, hsl(var(--accent)), hsl(45 100 65));
+    --gradient-accent: linear-gradient(90deg, hsl(var(--accent)), hsl(142 69 55));
 
     /* ظلال احترافية */
-    --shadow-soft: 0 4px 6px -1px hsl(var(--primary) / 0.1);
-    --shadow-medium: 0 10px 15px -3px hsl(var(--primary) / 0.1);
-    --shadow-large: 0 20px 25px -5px hsl(var(--primary) / 0.15);
-    --shadow-glow: 0 0 20px hsl(var(--accent) / 0.3);
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-large: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
 
     /* انتقالات سلسة */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -78,16 +81,16 @@
     --popover: 30 41 59;
     --popover-foreground: 248 250 252;
 
-    --primary: 217 91 65;
-    --primary-foreground: 15 23 42;
-    --primary-dark: 215 84 60;
-    --primary-light: 219 95 70;
+    --primary: 210 100 50;
+    --primary-foreground: 255 255 255;
+    --primary-dark: 210 100 40;
+    --primary-light: 210 100 60;
 
-    --secondary: 142 51 45;
-    --secondary-foreground: 248 250 252;
+    --secondary: 215 25 20;
+    --secondary-foreground: 255 255 255;
 
-    --accent: 45 93 65;
-    --accent-foreground: 15 23 42;
+    --accent: 142 69 50;
+    --accent-foreground: 255 255 255;
 
     --muted: 30 41 59;
     --muted-foreground: 148 163 184;
@@ -118,9 +121,423 @@
   body {
     @apply bg-background text-foreground font-tajawal;
     direction: rtl;
+    background-color: #ffffff !important;
   }
 
   html {
     direction: rtl;
+    background-color: #ffffff !important;
+  }
+
+  /* التأكد من أن الخلفيات تظهر بشكل صحيح */
+  .bg-card {
+    background-color: hsl(var(--card)) !important;
+  }
+
+  .bg-background {
+    background-color: hsl(var(--background)) !important;
+  }
+
+  .text-card-foreground {
+    color: hsl(var(--card-foreground)) !important;
+  }
+
+  /* ستايلات إضافية للكروت */
+  [data-card] {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+  }
+
+  /* إصلاح مشاكل الشفافية */
+  .opacity-fix {
+    opacity: 1 !important;
+  }
+
+  /* التأكد من عرض المحتوى */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* إعدادات خاصة للكروت */
+  .card, [class*="card"] {
+    background: hsl(var(--card)) !important;
+    color: hsl(var(--card-foreground)) !important;
+    opacity: 1;
+  }
+
+  /* إزالة أي خلفيات صفراء غريبة */
+  * {
+    background-color: inherit;
+  }
+
+  /* التأكد من وضوح الخلفيات */
+  .bg-transparent {
+    background-color: transparent !important;
+  }
+
+  .bg-white {
+    background-color: #ffffff !important;
+  }
+
+  /* إصلاح أي تدرجات غريبة */
+  [style*="background"] {
+    background-color: hsl(var(--card)) !important;
+  }
+}
+
+@layer components {
+  /* كومبوننتس مخصصة للحملة الانتخابية */
+  .campaign-card {
+    @apply bg-card text-card-foreground border border-border rounded-lg shadow-soft;
+    backdrop-filter: blur(8px);
+    transition: var(--transition-smooth);
+  }
+
+  .campaign-card:hover {
+    @apply shadow-medium;
+    transform: translateY(-2px);
+  }
+
+  .stats-card {
+    @apply campaign-card;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+  }
+
+  .primary-card {
+    background: var(--gradient-primary);
+    @apply text-primary-foreground border-0;
+  }
+
+  .secondary-card {
+    background: var(--gradient-secondary);
+    @apply text-secondary-foreground border-0;
+  }
+
+  /* أزرار مخصصة */
+  .btn-campaign {
+    @apply bg-primary text-primary-foreground hover:bg-primary-dark;
+    transition: var(--transition-smooth);
+  }
+
+  .btn-campaign:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* ستايلات الأزرار العامة */
+  button, .button, [role="button"] {
+    @apply rounded-lg font-medium transition-all duration-200;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-family: 'Tajawal', system-ui, sans-serif;
+  }
+
+  /* أزرار أساسية */
+  .btn-primary {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-soft);
+  }
+
+  .btn-primary:hover {
+    background: hsl(var(--primary-dark));
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-1px);
+  }
+
+  /* أزرار ثانوية */
+  .btn-secondary {
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    box-shadow: var(--shadow-soft);
+  }
+
+  .btn-secondary:hover {
+    background: hsl(215 25 25);
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-1px);
+  }
+
+  /* أزرار مخططة */
+  .btn-outline {
+    background: transparent;
+    color: hsl(var(--primary));
+    border: 2px solid hsl(var(--primary));
+  }
+
+  .btn-outline:hover {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    transform: translateY(-1px);
+  }
+
+  /* أزرار الخطر */
+  .btn-destructive {
+    background: hsl(var(--destructive));
+    color: hsl(var(--destructive-foreground));
+  }
+
+  .btn-destructive:hover {
+    background: hsl(0 84 55);
+    transform: translateY(-1px);
+  }
+
+  /* ستايلات الـ inputs */
+  input, textarea, select {
+    @apply rounded-lg border border-border bg-card text-card-foreground;
+    padding: 0.75rem 1rem;
+    font-family: 'Tajawal', system-ui, sans-serif;
+    transition: var(--transition-smooth);
+    font-size: 14px;
+    direction: rtl;
+    text-align: right;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+    background: hsl(var(--background));
+  }
+
+  input:hover, textarea:hover, select:hover {
+    border-color: hsl(var(--primary) / 0.7);
+  }
+
+  /* تخصيص الـ placeholder */
+  input::placeholder, textarea::placeholder {
+    color: hsl(var(--muted-foreground));
+    font-family: 'Tajawal', system-ui, sans-serif;
+  }
+
+  /* ستايلات أحجام مختلفة للأزرار */
+  .btn-sm {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+  }
+
+  /* ستايلات أحجام مختلفة للـ inputs */
+  .input-sm {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .input-lg {
+    padding: 1rem 1.25rem;
+    font-size: 1.125rem;
+  }
+
+  /* أزرار أيقونات */
+  .btn-icon {
+    padding: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* حالة disabled */
+  button:disabled, input:disabled, textarea:disabled, select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* تحسين مظهر الـ select */
+  select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: left 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-left: 2.5rem;
+  }
+}
+
+@layer utilities {
+  /* ستايلات إضافية للعناصر التفاعلية */
+  
+  /* تحسين الـ checkbox والـ radio */
+  input[type="checkbox"], input[type="radio"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: hsl(var(--primary));
+    cursor: pointer;
+  }
+
+  /* تحسين الـ file input */
+  input[type="file"] {
+    padding: 0.5rem;
+    background: hsl(var(--muted));
+    border: 2px dashed hsl(var(--border));
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  input[type="file"]:hover {
+    border-color: hsl(var(--primary));
+    background: hsl(var(--primary) / 0.05);
+  }
+
+  /* تحسين الـ range slider */
+  input[type="range"] {
+    height: 0.5rem;
+    background: hsl(var(--muted));
+    border-radius: 0.25rem;
+    outline: none;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: hsl(var(--primary));
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow-soft);
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 1.25rem;
+    height: 1.25rem;
+    background: hsl(var(--primary));
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* تحسين الـ progress bar */
+  progress {
+    appearance: none;
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: hsl(var(--muted));
+  }
+
+  progress::-webkit-progress-bar {
+    background: hsl(var(--muted));
+    border-radius: 0.25rem;
+  }
+
+  progress::-webkit-progress-value {
+    background: hsl(var(--primary));
+    border-radius: 0.25rem;
+  }
+
+  progress::-moz-progress-bar {
+    background: hsl(var(--primary));
+    border-radius: 0.25rem;
+  }
+
+  /* تحسين الـ labels */
+  label {
+    font-family: 'Tajawal', system-ui, sans-serif;
+    font-weight: 500;
+    color: hsl(var(--foreground));
+    margin-bottom: 0.25rem;
+    display: inline-block;
+  }
+
+  /* تحسين الـ fieldset */
+  fieldset {
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  legend {
+    font-family: 'Tajawal', system-ui, sans-serif;
+    font-weight: 600;
+    color: hsl(var(--foreground));
+    padding: 0 0.5rem;
+  }
+
+  /* تحسين الـ form groups */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  /* رسائل الخطأ */
+  .error-message {
+    color: hsl(var(--destructive));
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    font-family: 'Tajawal', system-ui, sans-serif;
+  }
+
+  /* رسائل النجاح */
+  .success-message {
+    color: hsl(var(--accent));
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    font-family: 'Tajawal', system-ui, sans-serif;
+  }
+
+  /* تحسين الـ loading states */
+  .loading {
+    opacity: 0.7;
+    pointer-events: none;
+    position: relative;
+  }
+
+  .loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid transparent;
+    border-top: 2px solid hsl(var(--primary));
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  /* تحسين الـ tooltips */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    text-align: center;
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    box-shadow: var(--shadow-medium);
+    font-family: 'Tajawal', system-ui, sans-serif;
+    font-size: 0.875rem;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
   }
 }
