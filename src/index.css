@@ -122,11 +122,20 @@
     @apply bg-background text-foreground font-tajawal;
     direction: rtl;
     background-color: #ffffff !important;
+    /* إصلاح مشكلة الألوان على الموبايل */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   html {
     direction: rtl;
     background-color: #ffffff !important;
+    /* إعدادات خاصة للموبايل */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    overflow-x: hidden;
   }
 
   /* التأكد من أن الخلفيات تظهر بشكل صحيح */
@@ -182,6 +191,36 @@
   /* إصلاح أي تدرجات غريبة */
   [style*="background"] {
     background-color: hsl(var(--card)) !important;
+  }
+
+  /* إعدادات خاصة لمنع ألوان الموبايل الغريبة */
+  * {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-focus-ring-color: transparent !important;
+  }
+
+  /* إصلاح خاص للـ Safari على iOS */
+  @supports (-webkit-appearance: none) {
+    input, textarea, select, button {
+      -webkit-appearance: none !important;
+      appearance: none !important;
+    }
+  }
+
+  /* منع تغيير الألوان تلقائياً */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+    -webkit-text-fill-color: #1e293b !important;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
   }
 }
 
@@ -539,5 +578,72 @@
 
   .tooltip:hover .tooltiptext {
     visibility: visible;
+  }
+
+  /* إصلاحات خاصة للموبايل */
+  @media (max-width: 768px) {
+    /* إزالة أي ألوان صفراء على الموبايل */
+    *, *::before, *::after {
+      background-color: inherit !important;
+      -webkit-tap-highlight-color: transparent !important;
+    }
+
+    body {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+    }
+
+    /* إصلاح الكروت على الموبايل */
+    .card, [class*="card"] {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+    }
+
+    /* إصلاح الأزرار على الموبايل */
+    button, .button {
+      background-color: #3b82f6 !important;
+      color: #ffffff !important;
+      -webkit-tap-highlight-color: transparent !important;
+    }
+
+    /* إصلاح الـ inputs على الموبايل */
+    input, textarea, select {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    /* إزالة تأثيرات الـ webkit على الموبايل */
+    input[type="text"], 
+    input[type="email"], 
+    input[type="password"], 
+    input[type="tel"], 
+    input[type="number"] {
+      -webkit-appearance: none;
+      -webkit-border-radius: 0;
+      border-radius: 0.5rem;
+      background: #ffffff !important;
+    }
+
+    /* إصلاح مشكلة الألوان الغريبة على iOS */
+    input:focus, textarea:focus, select:focus {
+      background: #ffffff !important;
+      -webkit-tap-highlight-color: transparent !important;
+    }
+  }
+
+  /* إصلاحات إضافية للمتصفحات المختلفة */
+  @supports (-webkit-touch-callout: none) {
+    /* Safari على iOS */
+    * {
+      -webkit-tap-highlight-color: transparent !important;
+      -webkit-touch-callout: none !important;
+    }
+    
+    body, html {
+      background: #ffffff !important;
+    }
   }
 }

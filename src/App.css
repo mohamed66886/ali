@@ -105,3 +105,59 @@
 .form-section:last-child {
   margin-bottom: 0;
 }
+
+/* إصلاحات خاصة للموبايل */
+@media (max-width: 768px) {
+  #root {
+    background: #ffffff !important;
+    min-height: 100vh;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* منع ظهور ألوان غريبة على الموبايل */
+  *, *::before, *::after {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    background-color: inherit !important;
+  }
+
+  .card-enhanced, .stats-card, .gradient-card {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+
+  .dashboard-content {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+
+  /* إصلاح الأزرار على الموبايل */
+  .btn, button {
+    -webkit-tap-highlight-color: transparent !important;
+    background: #3b82f6 !important;
+    color: #ffffff !important;
+  }
+
+  /* إصلاح النماذج على الموبايل */
+  .form-container {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+
+  .input, input, textarea, select {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+}
+
+/* إصلاح autofill على المتصفحات */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+  -webkit-text-fill-color: #1e293b !important;
+  background-color: #ffffff !important;
+}
