@@ -161,3 +161,47 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: #1e293b !important;
   background-color: #ffffff !important;
 }
+
+/* قواعد إضافية شاملة لإزالة اللون الأصفر */
+* {
+  background-color: inherit !important;
+}
+
+/* إصلاح نهائي للعناصر */
+.yellow, [class*="yellow"], [style*="yellow"], [style*="#ffff"], [style*="#ffd"] {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+}
+
+/* إصلاح شامل لجميع الكونتينرز */
+div, section, main, article, aside, header, footer, nav, .container, .wrapper {
+  background: inherit !important;
+  background-color: inherit !important;
+}
+
+/* إصلاح خاص للكروت والكومبوننتس */
+.card, .campaign-card, .stats-card, [data-card], [role="card"] {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* إصلاح للموبايل - قاعدة شاملة نهائية */
+@media (max-width: 768px) {
+  * {
+    background: inherit !important;
+    background-color: inherit !important;
+  }
+  
+  html, body, #root, .app {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+  
+  /* إزالة أي لون أصفر على الموبايل نهائياً */
+  [style*="yellow"], [class*="yellow"], [style*="#ff"], .bg-yellow-500 {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+}

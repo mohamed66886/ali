@@ -175,8 +175,26 @@
   }
 
   /* إزالة أي خلفيات صفراء غريبة */
-  * {
-    background-color: inherit;
+  *, *::before, *::after {
+    background-color: inherit !important;
+  }
+
+  /* قواعد قوية لإزالة اللون الأصفر نهائياً */
+  .bg-yellow-50, .bg-yellow-100, .bg-yellow-200, .bg-yellow-300, .bg-yellow-400, .bg-yellow-500,
+  [class*="yellow"], [style*="yellow"], [style*="#ffff"], [style*="#ffd"] {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+
+  /* إصلاح شامل للعناصر التي قد تحتوي على لون أصفر */
+  div, section, main, article, aside, header, footer, nav {
+    background-color: inherit !important;
+  }
+
+  /* إصلاح خاص للكروت والكونتينرز */
+  .container, .wrapper, .content, .section {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
   }
 
   /* التأكد من وضوح الخلفيات */
@@ -396,6 +414,38 @@
     background-size: 1.5em 1.5em;
     padding-left: 2.5rem;
   }
+
+  /* إصلاح شامل لإزالة اللون الأصفر من جميع الكومبوننتس */
+  .campaign-card, .stats-card, .primary-card, .secondary-card {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+
+  /* إصلاح خاص للعناصر التفاعلية */
+  button:not(.gradient), .button:not(.gradient) {
+    background: #3b82f6 !important;
+    color: #ffffff !important;
+  }
+
+  /* إصلاح للكروت التي تحتوي على gradients */
+  .primary-card {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+  }
+
+  .secondary-card {
+    background: linear-gradient(135deg, #64748b 0%, #475569 100%) !important;
+  }
+
+  /* إزالة أي ألوان صفراء من التدرجات */
+  [class*="gradient"], [style*="gradient"] {
+    background: #ffffff !important;
+  }
+
+  /* إصلاح خاص للعناصر التي تستخدم CSS variables */
+  [style*="var("], [class*="hsl"] {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
 }
 
 @layer utilities {
@@ -588,19 +638,20 @@
       -webkit-tap-highlight-color: transparent !important;
     }
 
-    body {
+    /* إصلاح شامل للخلفيات على الموبايل */
+    body, html, #root, .app, main, div, section {
       background: #ffffff !important;
       background-color: #ffffff !important;
     }
 
     /* إصلاح الكروت على الموبايل */
-    .card, [class*="card"] {
+    .card, [class*="card"], .campaign-card, .stats-card {
       background: #ffffff !important;
       background-color: #ffffff !important;
     }
 
     /* إصلاح الأزرار على الموبايل */
-    button, .button {
+    button, .button, [role="button"] {
       background-color: #3b82f6 !important;
       color: #ffffff !important;
       -webkit-tap-highlight-color: transparent !important;
@@ -632,6 +683,18 @@
       background: #ffffff !important;
       -webkit-tap-highlight-color: transparent !important;
     }
+
+    /* إصلاح خاص للعناصر التي تحتوي على CSS variables */
+    [style*="hsl"], [style*="var"], [class*="bg-"] {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+    }
+
+    /* إزالة ألوان صفراء محددة */
+    [style*="yellow"], [style*="#ff"], [style*="rgb(255,255"], [class*="yellow"] {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+    }
   }
 
   /* إصلاحات إضافية للمتصفحات المختلفة */
@@ -644,6 +707,61 @@
     
     body, html {
       background: #ffffff !important;
+    }
+  }
+
+  /* قواعد نهائية وقوية لإزالة اللون الأصفر نهائياً من كل مكان */
+  * {
+    background-color: inherit !important;
+  }
+
+  /* إصلاح شامل للعناصر الأساسية */
+  html, body, #root, .app, main, div:not(.gradient), section:not(.gradient) {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+
+  /* إزالة أي لون أصفر من أي مكان */
+  [style*="background-color: rgb(255, 255, 0)"],
+  [style*="background-color: #ffff"],
+  [style*="background-color: yellow"],
+  [style*="background: rgb(255, 255, 0)"],
+  [style*="background: #ffff"],
+  [style*="background: yellow"],
+  .bg-yellow-50, .bg-yellow-100, .bg-yellow-200, .bg-yellow-300, .bg-yellow-400, .bg-yellow-500,
+  .bg-yellow-600, .bg-yellow-700, .bg-yellow-800, .bg-yellow-900 {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+
+  /* إصلاح للكومبوننتس التي قد تكون صفراء */
+  .card, .campaign-card, .stats-card, [class*="card"]:not(.gradient) {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  /* إصلاح نهائي للمتصفحات المختلفة */
+  @supports (background-color: #ffffff) {
+    * {
+      background-color: inherit !important;
+    }
+    
+    html, body {
+      background: #ffffff !important;
+    }
+  }
+
+  /* إصلاح خاص للموبايل - قاعدة شاملة */
+  @media screen and (max-width: 768px) {
+    *, *::before, *::after {
+      background: inherit !important;
+      background-color: inherit !important;
+    }
+    
+    html, body, #root {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
     }
   }
 }
